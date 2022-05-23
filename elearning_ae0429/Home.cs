@@ -77,5 +77,10 @@ namespace elearning_ae0429
             frmAddGrade frm = new frmAddGrade();
             frm.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            //add user image
+        }
     }
 }
