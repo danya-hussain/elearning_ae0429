@@ -16,5 +16,11 @@ namespace elearning_ae0429
         {
             InitializeComponent();
         }
+
+        private void btsAddGrade_Click(object sender, EventArgs e)
+        {
+            //add grade to database
+
+        }
     }
 }

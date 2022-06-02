@@ -1,3 +1,5 @@
+using System.Data.OleDb;
+
 namespace elearning_ae0429
 {
     public partial class frmLogIn : Form
@@ -6,15 +8,13 @@ namespace elearning_ae0429
         public static String SetValueForid = "";
         public static String SetValueForaddgrade = "";
         public static String SetValueForjob = "";
-
-
         private List<Users> UserList = new List<Users>();
         public frmLogIn()
         {
             InitializeComponent();
             Users user1 = new Users("danya", "1234","ae0439","student");
             Users user2 = new Users("ahmad", "4321","ab9736","teacher");
-            UserList.Add(user1); 
+            UserList.Add(user1);
             UserList.Add(user2);
         }
 
@@ -54,23 +54,24 @@ namespace elearning_ae0429
             string useName = txtUserName.Text;
             string password = txtPassword.Text;
             string teacher = "teacher";
-            foreach (Users user in UserList)
-            {
-                if (useName == user.UserName && password == user.Password)
-                {
-                    SetValueForUserName = txtUserName.Text;
-                    SetValueForid = user.UserId;
-                    SetValueForjob = user.UserJob;
-                    if (SetValueForjob ==teacher )
-                    {
-                        SetValueForaddgrade = "add grade";
+            
+                 foreach (Users user in UserList)
+                 {
+                    if (useName == user.UserName && password == user.Password)
+                     {
+                         SetValueForUserName = txtUserName.Text;
+                         SetValueForid = user.UserId;
+                         SetValueForjob = user.UserJob;
+                       if (SetValueForjob ==teacher )
+                        {
+                            SetValueForaddgrade = "add grade";
+                        }
+                          frmHome frm = new frmHome();
+                          frm.Show();
+                          return;
                     }
-                    frmHome frm = new frmHome();
-                    frm.Show();
-                    return;
-                }
-            }
-            MessageBox.Show("wrong username or password");
+                 }
+                  MessageBox.Show("wrong username or password");
         }
 
         private void lbllogin_Click(object sender, EventArgs e)

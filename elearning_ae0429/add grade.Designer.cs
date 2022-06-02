@@ -107,6 +107,7 @@
             this.btsAddGrade.TabIndex = 6;
             this.btsAddGrade.Text = "add";
             this.btsAddGrade.UseVisualStyleBackColor = true;
+            this.btsAddGrade.Click += new System.EventHandler(this.btsAddGrade_Click);
             // 
             // frmAddGrade
             // 
